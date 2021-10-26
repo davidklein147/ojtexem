@@ -1,5 +1,5 @@
 import './login.css'
-import logo from "../images/udemy.png"
+import logo from "../ui/images/udemy.png"
 import { useEffect, useReducer, useState } from 'react'
 import { useHistory } from 'react-router-dom';
 
