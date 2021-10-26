@@ -1,0 +1,11 @@
+.login-body {
+    background-color: darkgray;
+    margin: -15px;
+    min-height: 750px;
+}
+
+.btn-purple {
+    color: #fff;
+    background-color: #b31bf9;
+    border-color: #b31bf9;
+}
