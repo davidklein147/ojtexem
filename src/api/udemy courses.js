@@ -1,4 +1,4 @@
-[
+const listOfCourses =  [
   {
     "courseName": "Android",
     "title": "Complete Android 11 Jetpack Bootcamp(With Jetpack Compose)",
@@ -35,6 +35,7 @@
       "stars": 3
   }
 ]
+ export default listOfCourses
 
 
 

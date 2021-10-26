@@ -20,7 +20,7 @@ function App() {
       <Router>
         <Switch>
           <Route path="/" exact>
-            <Redirect path="/login" />
+            <Redirect to="/login" />
           </Route>
           <Route path="/login">
             <Login />

@@ -1,0 +1,19 @@
+.header{
+ background-color: #b31bf9;
+
+}
+
+.content-header{
+    display: table-cell;
+    vertical-align: middle;
+}
+
+.name-border{
+    position: relative;
+    display:inline-block;
+    border: 2px dotted darkgray;
+    background-color: gray;
+    border-radius: 75%;
+    width: 50px;
+    height: 50px;
+}
