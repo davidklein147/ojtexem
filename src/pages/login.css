@@ -9,3 +9,13 @@
     background-color: #b31bf9;
     border-color: #b31bf9;
 }
+
+.login-caption{
+    
+    color: #1c1d1f;
+    display: block;
+    font-weight: 700;
+    font-size: 15px;
+    padding: 24
+
+}
