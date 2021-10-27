@@ -11,6 +11,7 @@ const formState = (state, action) => {
             break;
         case "password":
             state.password = action.value
+            break;
         default:
             break;
     }
@@ -33,30 +34,26 @@ const Login = () => {
     useEffect(() => {
         isFormValidHandler()
     }, [formData])
-    // const [userName, setUserName] = useState("");
-    // const [password, setPassword] = useState("");
 
-    useEffect(() => {
-        let interval = ()=>{}
-        if(isOnLoad){
-            interval = setInterval(() => {
-                let width = progWidth
-                if (progWidth < 100) {
-                    setProgWidth(width + 10)
-                    console.log(progWidth);
-                }
-            }, 100);
-        }
-        return () => { clearInterval(interval) }
-    }, [isOnLoad])
-    console.log(progWidth);
+    // useEffect(() => {
+    //     let interval = ()=>{}
+    //     if(isOnLoad){
+    //         interval = setInterval(() => {
+    //             let width = progWidth
+    //             if (progWidth < 100) {
+    //                 setProgWidth(width + 10)
+    //                 console.log(progWidth);
+    //             }
+    //         }, 100);
+    //     }
+    //     return () => { clearInterval(interval) }
+    // }, [isOnLoad])
+
+    // console.log(progWidth);
     const login = (e) => {
         e.preventDefault();
         localStorage.setItem("userDetails", JSON.stringify({ userName: formData.userName, password: formData.password }))
-        console.log(formData.userName, formData.password);
         setIsOnload(true)
-
-
         setTimeout(() => {
             history.push("/courses")
         }, 3000)
@@ -97,11 +94,9 @@ const Login = () => {
                                         })
                                         isFormValidHandler()
                                     }
-
                                     } />
                             </label>
                         </div>
-
                         <button type="submit" class="btn btn-purple"
                             disabled={!isFormValid}
                             onClick={(e) => { login(e) }}

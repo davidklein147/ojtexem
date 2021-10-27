@@ -5,8 +5,7 @@ import { Link } from 'react-router-dom'
 
 const ViewCcourseSummary = (props) => {
     const course = props.course;
-    console.log(props);
-
+ 
     const starsLavel = () => {
         var arr = []
         let index;
@@ -20,11 +19,8 @@ const ViewCcourseSummary = (props) => {
     }
 
     return (
-
         <Link to={`${props.path}/${course.id}`} className = "link">
-            <div className="course-back m-3 p-3" style={{ height: `150px` }} onClick={() => {
-            }
-            }>
+            <div className="course-back m-3 p-3" style={{ height: `150px` }}>
                 <div class="d-flex justify-content-between ">
                     <img className="img-box " src={course.img} height="115px" />
                     <div className="text-end">

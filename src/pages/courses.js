@@ -9,16 +9,14 @@ import { useParams, Route, Switch, Link, useHistory } from 'react-router-dom';
 const Courses = () => {
     const [screenHight, setScreenHight] = useState(window.innerHeight);
     const lineHeight20 = (screenHight / 5)
-    const {path, isExact } = useRouteMatch()
+    const { path, isExact } = useRouteMatch()
 
+    const [isPathExact, setIsPathExact] = useState(isExact)
     const [courses, setCourses] = useState([])
     const [header, setHeader] = useState("")
-    const [isPathExact, setIsPathExact] = useState(isExact)
     const [index, setIndex] = useState(-1);
 
     const hitory = useHistory()
-    console.log(hitory);
-    
 
     useEffect(() => {
         setCourses(apiCourses);
@@ -34,11 +32,7 @@ const Courses = () => {
             })}
         </React.Fragment>
     }
-    console.log(useRouteMatch());
-    console.log(useLocation())
-
     return (
-
         <React.Fragment>
             <div className="header" style={{ height: `${lineHeight20}px` }}>
                 <div style={{ display: "table-row" }}>
@@ -46,10 +40,10 @@ const Courses = () => {
                         <div className="" style={{ display: "inline-block" }}>
                             <h1 className="fs-1"  >{header}</h1>
                             {!isPathExact &&
-                                    <button className="btn back-button m-0" onClick = {()=>{hitory.push(`${path}`)}}>back</button>
-                                // <Link to={`${path}`}>
-                                // </Link>
-                                }
+                                <button className="btn back-button m-0" onClick={() => { hitory.push(`${path}`) }}>
+                                    back to courses list
+                                </button>
+                            }
                         </div>
                     </div>
                     <div className="text-end fs-3 pe-5" style={{ lineHeight: `${lineHeight20}px` }} >
@@ -68,6 +62,7 @@ const Courses = () => {
                         setIndex={setIndex}
                         index={index}
                         path={path}
+                        setIsPathExact={setIsPathExact}
                     ></ViewCourse>
                 </Route>
             </Switch>
