@@ -5,3 +5,11 @@
 .img-box{
     border: 2px solid black;
 }
+
+.link{
+    color: black !important;
+    text-decoration: none;
+}
+.link:hover{
+    color: #000;
+}
