@@ -35,22 +35,19 @@ const Login = () => {
         isFormValidHandler()
     }, [formData])
 
-    // useEffect(() => {
-    //     let interval = ()=>{}
-    //     if(isOnLoad){
-    //         interval = setInterval(() => {
-    //             let width = progWidth
-    //             if (progWidth < 100) {
-    //                 setProgWidth(width + 10)
-    //                 console.log(progWidth);
-    //             }
-    //         }, 100);
-    //     }
-    //     return () => { clearInterval(interval) }
-    // }, [isOnLoad])
+    useEffect(() => {
+        if (isOnLoad) {
+            const interval = setInterval(() => {
+                    if (progWidth < 100) {
+                        setProgWidth(width => Math.ceil(width + 3))
+                    }
+                }, 90);
+            return () =>  clearInterval(interval)
+        }
+    }, [isOnLoad])
 
-    // console.log(progWidth);
     const login = (e) => {
+        console.log("test");
         e.preventDefault();
         localStorage.setItem("userDetails", JSON.stringify({ userName: formData.userName, password: formData.password }))
         setIsOnload(true)
